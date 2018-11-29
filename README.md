@@ -1,4 +1,4 @@
-# Trustcode - Oficial docker image for Odoo 
+# Trustcode - Oficial docker image for Odoo
 
 How do use this docker image ?
 ---------------------
@@ -6,7 +6,7 @@ How do use this docker image ?
 tldr; Minimal command to run this image
 
 ```bash
-▶ docker run --name odoo --net host -d -e PG_USER=odoo -e PG_PASSWORD=odoo trustcode/docker-odoo:11.0
+▶ docker run --name odoo --net host -d -e PG_USER=odoo -e PG_PASSWORD=odoo trustcode/docker-runbot
 ```
 
 Other parameters:
@@ -27,7 +27,7 @@ Other parameters:
 Example: Switching the port on which Odoo will listen to:
 
 ```bash
-▶ docker run --name odoo --net host -d -e PG_USER=odoo -e PG_PASSWORD=odoo -e PORT=8050 trustcode/docker-odoo:11.0
+▶ docker run --name odoo --net host -d -e PG_USER=odoo -e PG_PASSWORD=odoo -e PORT=8050 trustcode/docker-runbot
 ```
 
 Preferred way:
@@ -40,7 +40,7 @@ Create a docker-compose file following this example:
 version: '3'
 services:
   odoo-update:
-    image: trustcode/docker-odoo:11.0
+    image: trustcode/docker-runbot
     network_mode: host
     volumes:
       - ~/.ssh:/home/temp/.ssh
@@ -74,7 +74,7 @@ Download the latest version of this docker image and follow below. We run daily 
 
 If you want to update your Odoo instance just add to your docker-compose file the following command:
 ```yaml
-    image: trustcode/docker-odoo:11.0
+    image: trustcode/docker-runbot
     command: autoupdate
     network_mode: host
 ```
